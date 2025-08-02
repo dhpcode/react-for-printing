@@ -15,6 +15,17 @@ function App() {
     setName('Aziz');
   }
 
+  const handleDelete = (id) => {
+    // const filteredEvents = events.filter((event) => {
+    //   return event.id !== id;
+    // })
+    // setEvents(filteredEvents)
+
+    // setEvents(events.filter(event => event.id !== id))
+
+    setEvents(prev => prev.filter(event => event.id !== id));
+  }
+
   return (
     <div className="App">
       <h1>My name is {name}</h1>
@@ -24,6 +35,7 @@ function App() {
         return (
           <div key={event.id}>
             <h2>{event.title}</h2>
+            <button onClick={() => handleDelete(event.id)}>Delete</button>
           </div>
         )
       })}
