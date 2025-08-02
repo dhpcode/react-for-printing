@@ -1,6 +1,8 @@
 import './App.css';
 import { useState } from 'react';
 import Title from './components/Title';
+import { Fragment } from 'react';
+import Modal from './components/Modal';
 
 function App() {
 
@@ -29,7 +31,7 @@ function App() {
   return (
     <div className="App">
 
-      <Title title = "Akhror's Kingdom 👑 Events" subtitle = "All events will be places here" />
+      <Title title="Akhror's Kingdom 👑 Events" subtitle="All events will be places here" />
       <br></br>
 
       {/* buttonlar */}
@@ -45,16 +47,21 @@ function App() {
 
           {events.map((event) => {
             return (
-              <div key={event.id}>
+              <Fragment key={event.id}>
                 <h2>{event.title}</h2>
                 <button onClick={() => handleDelete(event.id)}>Delete</button>
-              </div>
+              </Fragment>
             )
           })}
 
         </div>
       }
-
+      <Modal>
+        <h2>Akhror Soliyev's youtube channel 💖</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe facere minima aliquid placeat officia distinctio nemo laudantium mollitia quisquam, aspernatur nesciunt tempore eos ducimus provident eveniet totam tempora sapiente laborum doloremque cumque voluptatibus exercitationem sit ad?
+        </p>
+        <a href="#">Subscribe</a>
+      </Modal>
     </div>
   );
 }
