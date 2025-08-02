@@ -11,6 +11,8 @@ function App() {
     { title: 'AFC annual ceremony', id: 4 }
   ])
 
+  const [showContent, setShowContent] = useState(true);
+
   const handleClick = () => {
     setName('Aziz');
   }
@@ -31,14 +33,32 @@ function App() {
       <h1>My name is {name}</h1>
       <button onClick={handleClick}>Change name</button>
       <hr />
-      {events.map((event) => {
-        return (
-          <div key={event.id}>
-            <h2>{event.title}</h2>
-            <button onClick={() => handleDelete(event.id)}>Delete</button>
-          </div>
-        )
-      })}
+      <br></br>
+      <br></br>
+
+      {/* buttonlar */}
+
+      {showContent && <button onClick={() => setShowContent(false)}>Hide content</button>}
+      {!showContent && <button onClick={() => setShowContent(true)}>Show content</button>}
+
+
+      {/* kontent qism */}
+      {showContent &&
+        <div>
+          {/* kontent yo'q bo'lsa chiqadigan xabar */}
+          {events.length === 0 ? <h2>No content available 😔</h2> : null}
+          
+          {events.map((event) => {
+            return (
+              <div key={event.id}>
+                <h2>{event.title}</h2>
+                <button onClick={() => handleDelete(event.id)}>Delete</button>
+              </div>
+            )
+          })}
+
+        </div>
+      }
 
     </div>
   );
