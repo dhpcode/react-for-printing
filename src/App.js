@@ -1,8 +1,9 @@
 import './App.css';
 import { useState } from 'react';
+import Title from './components/Title';
 
 function App() {
-  const [name, setName] = useState('Davron');
+
 
   const [events, setEvents] = useState([
     { title: "akhror's birthday party", id: 1 },
@@ -13,9 +14,6 @@ function App() {
 
   const [showContent, setShowContent] = useState(true);
 
-  const handleClick = () => {
-    setName('Aziz');
-  }
 
   const handleDelete = (id) => {
     // const filteredEvents = events.filter((event) => {
@@ -30,14 +28,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1>My name is {name}</h1>
-      <button onClick={handleClick}>Change name</button>
-      <hr />
-      <br></br>
-      <br></br>
+      <Title />
 
       {/* buttonlar */}
-
       {showContent && <button onClick={() => setShowContent(false)}>Hide content</button>}
       {!showContent && <button onClick={() => setShowContent(true)}>Show content</button>}
 
@@ -47,7 +40,7 @@ function App() {
         <div>
           {/* kontent yo'q bo'lsa chiqadigan xabar */}
           {events.length === 0 ? <h2>No content available 😔</h2> : null}
-          
+
           {events.map((event) => {
             return (
               <div key={event.id}>
