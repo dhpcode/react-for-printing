@@ -28,7 +28,9 @@ function App() {
 
   return (
     <div className="App">
-      <Title />
+
+      <Title title = "Akhror's Kingdom 👑 Events" subtitle = "All events will be places here" />
+      <br></br>
 
       {/* buttonlar */}
       {showContent && <button onClick={() => setShowContent(false)}>Hide content</button>}

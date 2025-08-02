@@ -1,9 +1,9 @@
-function Title() {
+function Title({title, subtitle}) {
   return (
     <>
-      <h1 className='title'>Akhror's Kingdom 👑 Events</h1>
+      <h1 className='title'>{title}</h1>
       <br />
-      <p className='subtitle'>All events will be places here</p>
+      <p className='subtitle'>{subtitle}</p>
     </>
   )
 }
