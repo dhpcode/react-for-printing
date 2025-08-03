@@ -46,17 +46,17 @@ function App() {
 
 
       {/* kontent qism */}
-      {showContent && <EventList events = {events} handleDelete={handleDelete}/> }
-
+      {showContent && <EventList events={events} handleDelete={handleDelete} />}
+      <br />
       {/* Modal component */}
-      {showModal && <Modal closeModal={closeModal}>
+      {showModal && <Modal closeModal={closeModal} isModeModal={true}>
         <h2>Akhror Soliyev's youtube channel 💖</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe facere minima aliquid placeat officia distinctio nemo laudantium mollitia quisquam, aspernatur nesciunt tempore eos ducimus provident eveniet totam tempora sapiente laborum doloremque cumque voluptatibus exercitationem sit ad?
         </p>
         <a href="#">Subscribe</a>
       </Modal>}
       <br />
-      <button onClick={() => {setShowModal(true)}}>Show Modal</button>
+      <button onClick={() => { setShowModal(true) }}>Show Modal</button>
     </div>
   );
 }
