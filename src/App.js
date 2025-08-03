@@ -16,7 +16,7 @@ function App() {
 
   const [showContent, setShowContent] = useState(true);
 
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
 
   const handleDelete = (id) => {
