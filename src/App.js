@@ -16,6 +16,8 @@ function App() {
 
   const [showContent, setShowContent] = useState(true);
 
+  const [showModal, setShowModal] = useState(true);
+
 
   const handleDelete = (id) => {
     // const filteredEvents = events.filter((event) => {
@@ -26,6 +28,10 @@ function App() {
     // setEvents(events.filter(event => event.id !== id))
 
     setEvents(prev => prev.filter(event => event.id !== id));
+  }
+
+  const closeModal = () => {
+    setShowModal(false);
   }
 
   return (
@@ -56,12 +62,16 @@ function App() {
 
         </div>
       }
-      <Modal>
+
+      {/* Modal component */}
+      {showModal && <Modal closeModal={closeModal}>
         <h2>Akhror Soliyev's youtube channel 💖</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe facere minima aliquid placeat officia distinctio nemo laudantium mollitia quisquam, aspernatur nesciunt tempore eos ducimus provident eveniet totam tempora sapiente laborum doloremque cumque voluptatibus exercitationem sit ad?
         </p>
         <a href="#">Subscribe</a>
-      </Modal>
+      </Modal>}
+      <br />
+      <button onClick={() => {setShowModal(true)}}>Show Modal</button>
     </div>
   );
 }
