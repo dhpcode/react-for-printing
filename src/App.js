@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Title from './components/Title';
 import Modal from './components/Modal';
 import EventList from './components/EventList';
+import NewEventForm from './components/NewEventForm';
 
 function App() {
 
@@ -49,14 +50,11 @@ function App() {
       {showContent && <EventList events={events} handleDelete={handleDelete} />}
       <br />
       {/* Modal component */}
-      {showModal && <Modal closeModal={closeModal} isModeModal={false}>
-        <h2>Akhror Soliyev's youtube channel 💖</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe facere minima aliquid placeat officia distinctio nemo laudantium mollitia quisquam, aspernatur nesciunt tempore eos ducimus provident eveniet totam tempora sapiente laborum doloremque cumque voluptatibus exercitationem sit ad?
-        </p>
-        <a href="#">Subscribe</a>
+      {showModal && <Modal closeModal={closeModal} isModeModal={true}>
+        <NewEventForm />
       </Modal>}
       <br />
-      <button onClick={() => { setShowModal(true) }}>Show Modal</button>
+      <button onClick={() => { setShowModal(true) }}>New Event</button>
     </div>
   );
 }
