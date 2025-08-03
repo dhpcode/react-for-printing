@@ -49,7 +49,7 @@ function App() {
       {showContent && <EventList events={events} handleDelete={handleDelete} />}
       <br />
       {/* Modal component */}
-      {showModal && <Modal closeModal={closeModal} isModeModal={true}>
+      {showModal && <Modal closeModal={closeModal} isModeModal={false}>
         <h2>Akhror Soliyev's youtube channel 💖</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe facere minima aliquid placeat officia distinctio nemo laudantium mollitia quisquam, aspernatur nesciunt tempore eos ducimus provident eveniet totam tempora sapiente laborum doloremque cumque voluptatibus exercitationem sit ad?
         </p>
