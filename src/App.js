@@ -1,8 +1,8 @@
 import './App.css';
 import { useState } from 'react';
 import Title from './components/Title';
-import { Fragment } from 'react';
 import Modal from './components/Modal';
+import EventList from './components/EventList';
 
 function App() {
 
@@ -46,22 +46,7 @@ function App() {
 
 
       {/* kontent qism */}
-      {showContent &&
-        <div>
-          {/* kontent yo'q bo'lsa chiqadigan xabar */}
-          {events.length === 0 ? <h2>No content available 😔</h2> : null}
-
-          {events.map((event) => {
-            return (
-              <Fragment key={event.id}>
-                <h2>{event.title}</h2>
-                <button onClick={() => handleDelete(event.id)}>Delete</button>
-              </Fragment>
-            )
-          })}
-
-        </div>
-      }
+      {showContent && <EventList events = {events} handleDelete={handleDelete}/> }
 
       {/* Modal component */}
       {showModal && <Modal closeModal={closeModal}>
