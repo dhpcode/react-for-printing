@@ -4,7 +4,7 @@ import './NewEventForm.css'
 import { v4 as uuidv4 } from 'uuid';
 uuidv4();
 
-function NewEventForm() {
+function NewEventForm({ newEvent }) {
   const [title, setTitle] = useState('');
   const [date, setDate] = useState('');
 
@@ -19,10 +19,10 @@ function NewEventForm() {
     const event = {
       title: title,
       date: date,
-      id: uuidv4() 
+      id: uuidv4()
     }
+    newEvent(event)
     resetInputs();
-    console.log(event)
   }
 
   return (
@@ -35,7 +35,6 @@ function NewEventForm() {
         <span>Event Date</span>
         <input type="date" onChange={e => setDate(e.target.value)} value={date} />
       </label>
-
       <br /><br />
       <button>Submit</button>
 
